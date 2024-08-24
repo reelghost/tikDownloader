@@ -55,7 +55,7 @@ const Header = ({onChange, onSubmit}) => {
 
       <div className="flex flex-col items-center justify-center max-w-[1020px] mx-auto text-center font-montserrat flex-1 relative z-10 mt-[100px] px-4">
         <h1 className="text-white font-bold xl:text-[64px] lg:text-5xl text-4xl leading-[1.25]">
-          Bringing TikToks your{" "}
+          Bringing TikToks to your{" "}
           <span className="gradi-theme-text">local storage</span>
         </h1>
         <p className="lg:text-xl md:text-lg text-base my-[46px]">
@@ -65,7 +65,7 @@ const Header = ({onChange, onSubmit}) => {
           <div className="flex flex-col md:flex-row items-stretch gap-[14px] md:max-w-[610px] mx-auto">
             <input
               type="text"
-              placeholder="Enter the tiktok url"
+              placeholder="Paste the Tiktok link"
               // value={inputUrl}
               onChange={onChange}
               className="lg:min-h-[56px] min-h-[50px] px-4 rounded-lg bg-transparent border-[1px] border-white w-full placeholder:text-cadet-gray outline-0 font-source-sans lg:text-base text-sm"
