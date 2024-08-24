@@ -16,7 +16,7 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.post('http://localhost:8000/api/get-tik-data', { url: tikLink }); // Adjust the URL and payload as needed
+        const response = await axios.get(`https://tikwm.com/api/?url=${tikLink}`); // Adjust the URL and payload as needed
         setData(response.data);
       } catch (err) {
         setError(err);
