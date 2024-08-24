@@ -8,6 +8,10 @@ const Framework = ({ data, loading, error }) => {
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error.message}</div>;
 
+  function truncateText(text, length = 30) {
+    return text.length > length ? text.slice(0, length) + '...' : text;
+  };
+
   const onVideoPress = (event) => {
     const videoElement = event.currentTarget;
     if (videoElement.paused) {
@@ -63,7 +67,7 @@ const Framework = ({ data, loading, error }) => {
                   <div className="relative text-white flex flex-grow-1 pointer-events-none ml-[5px]">
                     <div className="w-[100%]">
                       <h3>@{video.author.nickname}</h3>
-                      <p className="text-sm font-light">{video.title}</p>
+                      <p className="text-sm font-light">{truncateText(video.title)}</p>
                       <div className="flex items-center w-[100%] h-fit">
                         <FaMusic className="w-8" />
                         <marquee className="flex items-center w-[100%]" direction="left" scrollamount="2">
@@ -77,7 +81,7 @@ const Framework = ({ data, loading, error }) => {
               {/* Left part end */}
 
               {/* Right part */}
-              <div className="footer-right z-50">
+              <div className="absolute right-0 footer-right z-50">
                 <div className="w-full mr-5 mb-9 text-white">
                   {/* Icons start */}
                   <div className="flex flex-col justify-end items-center text-center mt-[5px]">
