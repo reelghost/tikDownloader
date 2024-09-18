@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Analytics } from "@vercel/analytics/react"
 import { Icons } from "../../assets/icons";
 // import { IoClose } from "react-icons/io5";
 // import { MdMenu } from "react-icons/md";
