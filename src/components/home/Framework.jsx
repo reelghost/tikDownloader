@@ -125,12 +125,12 @@ const Framework = ({ data, loading, error }) => {
 
         {/* Download Buttons */}
         <div className="flex space-x-4 mb-4">
-          <button
+          {/* <button
             onClick={() => handleDownload(video.music_info.play, `${video.author.nickname}.mp3`)}
             className="bg-purple-500 hover:bg-purple-900 text-white font-bold py-2 px-4 rounded"
           >
             Download MP3
-          </button>
+          </button> */}
           <button
             onClick={() => handleDownload(video.play, `${video.author.nickname}.mp4`)}
             className="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded"
