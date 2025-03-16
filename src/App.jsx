@@ -1,23 +1,24 @@
 import { BrowserRouter as Router } from "react-router-dom";
 import { Analytics } from "@vercel/analytics/react"
 import { useEffect, useState } from "react";
-import axios from 'axios'; // Import axios directly
-import Framework from "./components/home/Framework";
+import axios from 'axios'; 
+import VideoPlayer from "./components/home/VideoPlayer";
 import Header from "./components/home/Header";
 import Footer from "./components/home/Footer";
 
 function App() {
   const [tikLink, setTikLink] = useState('');
-
   const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
 
   useEffect(() => {
     const fetchData = async () => {
+      if (!tikLink) return;
+      setLoading(true);
       try {
-        const response = await axios.get(`https://tikwm.com/api/?url=${tikLink}`); // Adjust the URL and payload as needed
+        const response = await axios.get(`https://tikwm.com/api/?url=${tikLink}`); 
         setData(response.data);
       } catch (err) {
         setError(err);
@@ -30,7 +31,7 @@ function App() {
   console.log(data);
 
   const handleInputChange = (e) => {
-    setTikLink(e.target.value); // Update tikLink state with input value
+    setTikLink(e.target.value); 
   };
 
   const handleInputSubmit = (e) => {
@@ -45,7 +46,7 @@ function App() {
       <Analytics />
       <main className="relative z-0">
         <Router>
-          <Framework data={data} error={error} loading={loading}/>
+          <VideoPlayer data={data} error={error} loading={loading}/>
         </Router>
       </main>
       {/* footer  */}
